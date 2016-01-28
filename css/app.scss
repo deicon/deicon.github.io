@@ -60,15 +60,18 @@ body {
         color: $deicon_color;
         text-decoration: underline;
       }
+
+      .top-bar-menu-item:hover {
+        @extend .block-select;
+      }
+
+      .top-bar-menu-item-active {
+        @extend .block-select;
+      }
+
     }
 
-    .top-bar-menu-item:hover {
-      @extend .block-select;
-    }
 
-    .top-bar-menu-item-active {
-      @extend .block-select;
-    }
 
   }
 
