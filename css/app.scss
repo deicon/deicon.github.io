@@ -1,15 +1,9 @@
 ---
 ---
-$deicon_blue: #293173;
-$deicon_orange: #f75229; // 	rgb(247,​ 82,​ 41)
-$deicon_color: $deicon_blue;
 
-$top-bar-background-color: #ffffff;
+@import "variables";
 
-$top-bar-border-color: #ffffff;
 
-$top-bar-menu-item-background-color: #ffffff;
-$top-bar-menu-item-background-color-hover: #eef0f9; // rgb(238,​ 240,​ 249)
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
@@ -59,6 +53,7 @@ body {
       a, a.hover, a.visited {
         color: $deicon_color;
         text-decoration: underline;
+        font-size: $top-bar-navigation-text-size;
       }
 
       .top-bar-menu-item:hover {
