@@ -32,7 +32,7 @@ body {
     display: block;
     color: $deicon-orange;
     border: 3px solid $deicon-orange;
-
+    width: 100%;
   }
 
   .top-bar-logo {
@@ -56,19 +56,17 @@ body {
         font-size: $top-bar-navigation-text-size;
       }
 
-      .top-bar-menu-item:hover {
+      &:hover {
         @extend .block-select;
       }
 
-      .top-bar-menu-item-active {
+      &.top-bar-menu-item-active {
         @extend .block-select;
       }
-
     }
-
-
-
   }
+
+
 
 }
 
