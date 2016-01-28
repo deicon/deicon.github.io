@@ -1,20 +1,23 @@
 ---
-    author: Dieter Eickstädt
+author: Dieter Eickstädt
 ---
 <!DOCTYPE html>
 <html>
 
-  {% include header.html %}
+{% include header.html %}
 
 <body>
 
-   {% include navigation.html %}
+<div class="container">
 
-<!-- Content of page {{ page.name }} {{ page.author }}-->
+    {% include navigation.html %}
+
+    <!-- Content of page {{ page.name }} {{ page.author }}-->
     {{ content }}
-<!-- Content of page {{ page.name }} -->
+    <!-- Content of page {{ page.name }} -->
 
     {% include footer.html %}
 
+</div>
 </body>
 </html>

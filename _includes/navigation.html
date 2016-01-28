@@ -1,0 +1,19 @@
+<div class="top-bar">
+    <div class="top-bar-logo">
+        <a href="{{ site.url }}"><img src="/img/logo_notext.png" alt="Deicon Logo"/></a></div>
+    <div class="top-bar-menu">
+        <ul>
+            {% for np in site.data.navigation.pages %}
+              {% for p in site.pages %}
+                {% if np.name == p.nav-name %}
+                    <li class="top-bar-menu-item {% if p.url == page.url %}top-bar-menu-item-active{% endif %}">
+                        <a href="{{ site.url }}{{p.url}}">{{ p.nav-name }}</a></li>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    <hr/>
+</div>
+
+

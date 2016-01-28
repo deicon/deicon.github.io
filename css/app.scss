@@ -1,6 +1,76 @@
 ---
 ---
-.icon-hourglass {
-  color: yellow;
+$deicon_blue: #293173;
+$deicon_orange: #f75229; // 	rgb(247,​ 82,​ 41)
+$deicon_color: $deicon_blue;
+
+$top-bar-background-color: #ffffff;
+
+$top-bar-border-color: #ffffff;
+
+$top-bar-menu-item-background-color: #ffffff;
+$top-bar-menu-item-background-color-hover: #eef0f9; // rgb(238,​ 240,​ 249)
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+// top Navigation styling done manually
+
+.block-select {
+  background-color: $top-bar-menu-item-background-color-hover !important;
+}
+
+.top-bar {
+  background: $top-bar-background-color;
+  border: 2px solid;
+  border-color: $top-bar-border-color;
+  height: auto;
+  max-width: 960;
+  overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+
+
+  hr {
+    clear: left;
+    display: block;
+    color: $deicon-orange;
+    border: 3px solid $deicon-orange;
+
+  }
+
+  .top-bar-logo {
+    padding: 10px;
+    float: left;
+  }
+
+  .top-bar-menu {
+    float: right;
+    margin-right: 0%;
+    margin-top: 5px;
+
+    padding: 12px;
+    .top-bar-menu-item {
+      display: inline;
+      background-color: $top-bar-menu-item-background-color;
+      padding: 14px;
+      a, a.hover, a.visited {
+        color: $deicon_color;
+        text-decoration: underline;
+      }
+    }
+
+    .top-bar-menu-item:hover {
+      @extend .block-select;
+    }
+
+    .top-bar-menu-item-active {
+      @extend .block-select;
+    }
+
+  }
 
 }
+
