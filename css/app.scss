@@ -2,11 +2,13 @@
 ---
 
 @import "variables";
+@import "bourbon/bourbon";
 
 
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
+  color: $deicon_blue;
 }
 
 // top Navigation styling done manually
@@ -15,17 +17,21 @@ body {
   background-color: $top-bar-menu-item-background-color-hover !important;
 }
 
+.container {
+  max-width: 960;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+  box-sizing: border-box;
+}
+
+
 .top-bar {
   background: $top-bar-background-color;
   border: 2px solid;
   border-color: $top-bar-border-color;
   height: auto;
-  max-width: 960;
   overflow: hidden;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: block;
-
 
   hr {
     clear: left;
@@ -65,8 +71,67 @@ body {
       }
     }
   }
+  }
 
+.main-content {
+  box-sizing: border-box;
+  font-size: 14px;
+  color: $deicon_light_blue;
+  width: 100%;
 
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1.5625em;
+    text-rendering: optimizelegibility;
+  }
 
+  h1 {
+    font-size: 1.875em;
+    font-weight: normal;
+    line-height: 1.4;
+    color: $deicon_blue;
+  }
 }
+
+.main-content-body {
+
+  box-sizing: border-box;
+  margin: 30px;
+
+  h3 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: normal;
+  }
+
+
+  div {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .main-content-body-col1 {
+    box-sizing: border-box;
+    float:left;
+  }
+
+  .main-content-body-col2 {
+    box-sizing: border-box;
+    float:right;
+  }
+}
+
+.round-icon {
+  display: block;
+  font-size: 4em;
+  height: 1.5em;
+  line-height: 1.4em;
+  margin: auto;
+  text-align: center;
+  width: 1.5em;
+}
+
+
 
