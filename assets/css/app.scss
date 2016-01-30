@@ -1,9 +1,10 @@
 ---
+  s: demo
+  d: demm
 ---
 
 @import "variables";
 @import "bourbon/bourbon";
-
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -24,7 +25,6 @@ body {
   display: block;
   box-sizing: border-box;
 }
-
 
 .top-bar {
   background: $top-bar-background-color;
@@ -71,7 +71,7 @@ body {
       }
     }
   }
-  }
+}
 
 .main-content {
   box-sizing: border-box;
@@ -84,7 +84,9 @@ body {
     line-height: 1.6;
     margin-bottom: 1.5625em;
     text-rendering: optimizelegibility;
+
   }
+
 
   h1 {
     font-size: 1.875em;
@@ -106,6 +108,13 @@ body {
     font-weight: normal;
   }
 
+  ul li {
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 2em;
+    list-style-position: outside;
+  }
+
 
   div {
     width: 50%;
@@ -114,12 +123,12 @@ body {
 
   .main-content-body-col1 {
     box-sizing: border-box;
-    float:left;
+    float: left;
   }
 
   .main-content-body-col2 {
     box-sizing: border-box;
-    float:right;
+    float: right;
   }
 }
 
