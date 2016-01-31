@@ -142,5 +142,64 @@ body {
   width: 1.5em;
 }
 
+.main-content-contact {
+  margin: 0 auto;
+
+  h3 {
+    font-size: 1.8em;
+    font-weight: normal;
+  }
+
+}
+
+.main-content-contact-formular {
+
+  box-sizing: border-box;
+  float: left;
+  width: 60%;
+
+  form {
+    display: block;
+    width: 75%;
+    label {
+      margin-top: 25px;
+      width: 40em;
+      height: 2em;
+      display: block;
+    }
+    input {
+      width: 40em;
+      height: 2em;
+      display: block;
+    }
+
+    textarea {
+      width: 40em;
+      height: 20em;
+    }
+
+  }
+}
+
+.main-content-contact-sidebar {
+  box-sizing: border-box;
+  float: right;
+  width: 25%;
+  padding-left: 15px;
+
+  h4 {
+    font-size: 1.8em;
+    font-weight: normal;
+  }
+
+  span {
+    display: block;
+    margin-top: 0;
+
+    a, a:hover, a:visited {
+      text-decoration: none;
+    }
+  }
+}
 
 

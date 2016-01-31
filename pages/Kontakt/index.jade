@@ -1,0 +1,36 @@
+:verbatim
+    ---
+        layout: "default"
+        permalink: "/Kontakt/"
+        navigation: true
+        nav-name: Kontakt
+    ---
+.main-content
+    .main-content-contact
+        .main-content-contact-formular
+            h3 Kontakformular
+            p
+                | Wir freuen uns sie zu unterstützen. Nehmen Sie direkt Kontakt mit
+                | uns auf und wir setzen uns umgehend mit Ihnen in Verbindung
+            form
+                label(for="form-name") Ihr Name (Pflichtfeld)
+                input(id="form-name", name="form-name")
+                label(for="form-email") Ihre Email Adresse
+                input(id="form-email", name="form-email")
+                label(for="form-betreff") Betreff
+                input(id="form-betreff", name="form-betreff")
+                label(for="form-nachricht") Ihre Nachricht
+                textarea(id="form-nachricht", name="form-nachricht")
+        .main-content-contact-sidebar
+            h4 Adresse
+            span deicon it solutions GmbH & Co. KG
+            span Teutonenweg 4
+            span 65232 Taunusstein
+            h4 Telefon
+            span 06128 / 9 790 710
+            h4 Fax
+            span 06128 / 9 790 719
+            h4 E-Mail
+            span
+                a(href="mailto:eickstaedt@deicon.de") eickstaedt@deicon.de
+        div(style="clear: both;")
