@@ -7,16 +7,19 @@ html.no-js(lang="en")
 
         title Deicon Style for Foundation
 
-        link(rel="stylesheet", href="assets/css/foundation.css")
-        link(rel="stylesheet", href="assets/css/app.css")
+        link(rel="stylesheet", href="assets/foundation-6/css/foundation.css")
+        link(rel="stylesheet", href="assets/foundation-6/css/app.css")
 
     .row
-        .top-bar
-            .top-bar-logo: img(src="../assets/img/logo_notext.png")
-            .top-bar-left
-                ul.menu
+        .top-bar.white-bg
+            .top-bar-left.white-bg
+                img(src="assets/img/logo_notext.png")
+            .top-bar-right
+                ul.menu.nav-list
                     li: a(href="") Leistungen
                     li: a(href="") Projekte
                     li: a(href="") Kontakt
                     li: a(href="") Blog
-
+    .row
+        .large-12.columns
+            hr.deicon_hr
