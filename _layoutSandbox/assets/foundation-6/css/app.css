@@ -30,4 +30,31 @@
 .menu li a:hover {
   background-color: #EEF0F9; }
 
+.main-content {
+  color: #293173;
+  font-size: 0.976em; }
+  .main-content h1 {
+    font-size: 1.875em;
+    font-weight: normal;
+    line-height: 1.4; }
+  .main-content p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 1.5625em;
+    text-rendering: optimizelegibility; }
+
+.round-icon {
+  display: block;
+  font-size: 4em;
+  height: 1.5em;
+  line-height: 1.4em;
+  margin: auto;
+  text-align: center;
+  width: 1.5em;
+  color: #293173; }
+
+.center {
+  text-align: center;
+  color: #293173 !important; }
+
 /*# sourceMappingURL=app.css.map */
