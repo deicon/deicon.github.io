@@ -5,6 +5,7 @@
         navigation: true
         nav-name: Kontakt
     ---
+
 .main-content
     .main-content-contact
         .main-content-contact-formular
@@ -22,7 +23,7 @@
                 input(id="form-betreff", name="form-betreff")
                 label(for="form-nachricht") Ihre Nachricht
                 textarea(id="form-nachricht", name="form-nachricht")
-                button Abschicken
+                button(onclick="success('Ihre Anfrage wurde verschickt.'); return true;") Abschicken
         .main-content-contact-sidebar
             h4 Adresse
             span deicon it solutions GmbH & Co. KG
