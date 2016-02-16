@@ -15,6 +15,7 @@
             form(action="http://formspree.io/web@deicon.de", method="POST")
                 label(for="form-name") Ihr Name (Pflichtfeld)
                 input(id="form-name", name="form-name")
+                input(type="hidden", name="_next", value="{{site.url}}/")
                 label(for="form-email") Ihre Email Adresse
                 input(id="form-email", name="form-email")
                 label(for="form-betreff") Betreff
