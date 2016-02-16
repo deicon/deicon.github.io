@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (username.github.io) then use these settings:
 #url: "http://deicon.github.io"
-url: "http://preview.deicon.de"
+url: "http://localhost:4000"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -18,7 +18,7 @@ baseurl: ""
 title: deicon it solutions GmbH & Co. KG
 
 # Short description of your site
-description: 
+description:
 
 # --- Navigation bar options --- #
 
@@ -44,7 +44,7 @@ author:
   #twitter: yourname   # eg. daattali
   #linkedin: yourlink  # eg. "pub/dean-attali/8/946/143"
   #stackoverflow: yourlink  # eg. "3943160/daattali"
- 
+
 # Select which links to show in the footer
 footer-links-active:
   rss: false

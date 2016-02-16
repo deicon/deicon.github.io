@@ -84,7 +84,6 @@ body {
     line-height: 1.6;
     margin-bottom: 1.5625em;
     text-rendering: optimizelegibility;
-
   }
 
 
@@ -124,11 +123,13 @@ body {
   .main-content-body-col1 {
     box-sizing: border-box;
     float: left;
+    width: 45%;
   }
 
   .main-content-body-col2 {
     box-sizing: border-box;
     float: right;
+    width: 45%;
   }
 }
 
@@ -156,26 +157,35 @@ body {
 
   box-sizing: border-box;
   float: left;
-  width: 60%;
+  width: 65%;
+
+  $form-element-width: 60em;
 
   form {
     display: block;
     width: 75%;
     label {
       margin-top: 25px;
-      width: 40em;
+      width: $form-element-width;
       height: 2em;
       display: block;
     }
     input {
-      width: 40em;
+      width: $form-element-width;
       height: 2em;
       display: block;
     }
 
     textarea {
-      width: 40em;
+      width: $form-element-width;
       height: 20em;
+    }
+
+    button {
+      font-size: 1.2em;
+      margin-top: 10px;
+      border-radius: 10px;
+      background-color: #eee;
     }
 
   }
@@ -203,3 +213,12 @@ body {
 }
 
 
+a, a.hover, a.visited {
+  color: $deicon_color;
+  text-decoration: underline;
+  font-size: $top-bar-navigation-text-size;
+}
+
+a.hover {
+  background-color: $deicon_light_blue;
+}

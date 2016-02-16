@@ -12,7 +12,7 @@
             p
                 | Wir freuen uns sie zu unterstützen. Nehmen Sie direkt Kontakt mit
                 | uns auf und wir setzen uns umgehend mit Ihnen in Verbindung
-            form
+            form(action="http://formspree.io/web@deicon.de")
                 label(for="form-name") Ihr Name (Pflichtfeld)
                 input(id="form-name", name="form-name")
                 label(for="form-email") Ihre Email Adresse
@@ -21,6 +21,7 @@
                 input(id="form-betreff", name="form-betreff")
                 label(for="form-nachricht") Ihre Nachricht
                 textarea(id="form-nachricht", name="form-nachricht")
+                button Abschicken
         .main-content-contact-sidebar
             h4 Adresse
             span deicon it solutions GmbH & Co. KG
