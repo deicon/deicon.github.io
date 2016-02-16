@@ -8,7 +8,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: $deicon_blue;
 }
 
@@ -20,8 +20,8 @@ body {
 
 .container {
   max-width: 960;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   display: block;
   box-sizing: border-box;
 }
@@ -73,18 +73,20 @@ body {
   }
 }
 
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 1.5625em;
+  text-rendering: optimizelegibility;
+
+}
+
 .main-content {
   box-sizing: border-box;
   font-size: 14px;
   color: $deicon_light_blue;
   width: 100%;
 
-  p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 1.5625em;
-    text-rendering: optimizelegibility;
-  }
 
 
   h1 {
@@ -98,7 +100,8 @@ body {
 .main-content-body {
 
   box-sizing: border-box;
-  margin: 30px;
+  margin:  30px;
+
 
   img {
     width: 78%;
@@ -130,14 +133,15 @@ body {
   .main-content-body-col1 {
     box-sizing: border-box;
     float: left;
-    width: 45%;
-
+    width: 48%;
+    margin-top: 20px;
   }
 
   .main-content-body-col2 {
     box-sizing: border-box;
     float: right;
-    width: 45%;
+    width: 48%;
+    margin-top: 20px;
   }
 }
 
