@@ -1,1 +1,23 @@
 
+---
+author: Dieter Eickstädt
+---
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include header.html %}
+
+<body>
+
+<div class="container">
+
+    <!-- Content of page {{ page.name }} {{ page.author }}-->
+    {{ content }}
+    <!-- Content of page {{ page.name }} -->
+
+    {% include footer.html %}
+
+</div>
+</body>
+</html>
