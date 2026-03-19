@@ -1,0 +1,35 @@
+---
+import ContactForm from './ContactForm.astro';
+import { type Lang } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="kontakt" class="bg-darker px-6 py-20 lg:px-12" aria-labelledby="kontakt-title">
+  <h2 id="kontakt-title" class="mb-12 text-xs font-semibold uppercase tracking-[3px] text-accent">
+    {t('section.kontakt')}
+  </h2>
+  <div class="mx-auto grid max-w-[960px] grid-cols-1 gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+    <ContactForm lang={lang} />
+    <div>
+      <h3 class="text-sm font-bold text-text-primary">{t('contact.address.title')}</h3>
+      <div class="mt-1.5 space-y-0.5 text-sm text-text-secondary">
+        <p>deicon it solutions GmbH & Co. KG</p>
+        <p>Teutonenweg 4</p>
+        <p>65232 Taunusstein</p>
+      </div>
+      <h3 class="mt-5 text-sm font-bold text-text-primary">{t('contact.phone.title')}</h3>
+      <p class="mt-1.5 text-sm text-text-secondary">06128 / 9 790 710</p>
+      <h3 class="mt-5 text-sm font-bold text-text-primary">{t('contact.email.title')}</h3>
+      <p class="mt-1.5 text-sm text-text-secondary">
+        <a href="mailto:info@deicon.de" class="text-text-secondary hover:text-accent transition-colors">info@deicon.de</a>
+      </p>
+    </div>
+  </div>
+</section>
