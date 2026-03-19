@@ -17,6 +17,11 @@
   --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Slightly larger base for comfortable reading at 100% zoom */
+html {
+  font-size: 17px;
+}
+
 /* Skip-to-content link */
 .skip-to-content {
   position: absolute;
