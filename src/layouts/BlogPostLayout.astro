@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import { type Lang } from '@/i18n/translations';
+import { useTranslations, getLocalePath } from '@/i18n/utils';
+
+interface Props {
+  title: string;
+  date: Date;
+  lang: Lang;
+  slug: string;
+}
+
+const { title, date, lang, slug } = Astro.props;
+const t = useTranslations(lang);
+const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${title} — deicon it solutions`}
+  description={title}
+  lang={lang}
+  canonicalPath={`blog/${slug}/`}
+>
+  <Nav lang={lang} />
+  <main id="main-content" class="mx-auto max-w-3xl px-6 py-16 lg:px-12">
+    <a href={getLocalePath(lang)} class="text-sm text-accent hover:underline">&larr; {t('blog.back')}</a>
+    <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-text-primary lg:text-4xl">{title}</h1>
+    <p class="mt-3 text-sm text-text-secondary">{formattedDate}</p>
+    <div class="prose-invert mt-10 max-w-none text-text-secondary leading-relaxed [&_h2]:text-text-primary [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-accent [&_a]:underline [&_code]:text-accent/80">
+      <slot />
+    </div>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>
