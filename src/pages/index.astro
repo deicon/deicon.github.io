@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Nav from '@/components/Nav.astro';
+import Hero from '@/components/Hero.astro';
+import SectionDivider from '@/components/SectionDivider.astro';
 ---
 
 <BaseLayout
@@ -10,6 +12,8 @@ import Nav from '@/components/Nav.astro';
 >
   <Nav lang="de" />
   <main id="main-content">
-    <h1>deicon — coming soon</h1>
+    <Hero lang="de" />
+    <SectionDivider />
+    <p class="p-12 text-text-secondary">More sections coming...</p>
   </main>
 </BaseLayout>

@@ -1,0 +1,28 @@
+---
+// src/components/Hero.astro
+import { type Lang } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const services = ['IT Strategy', 'IT Due Diligence', 'Cloud Native', 'AI Transformation'];
+---
+
+<section class="relative overflow-hidden bg-primary px-6 py-24 text-center lg:px-12 lg:py-[100px] lg:pb-[88px]">
+  <h1 class="relative z-10 text-[28px] font-extrabold leading-tight tracking-tight text-text-primary sm:text-4xl lg:text-[44px] lg:tracking-[-1px]">
+    {t('hero.headline')}
+  </h1>
+  <div class="relative z-10 mx-auto mt-5 h-[3px] w-12 bg-accent"></div>
+  <div class="relative z-10 mt-5 flex flex-wrap items-center justify-center gap-x-1 text-sm uppercase tracking-[2px] text-text-secondary lg:text-base">
+    {services.map((service, i) => (
+      <span>
+        {i > 0 && <span class="text-accent mx-2">·</span>}
+        {service}
+      </span>
+    ))}
+  </div>
+</section>
