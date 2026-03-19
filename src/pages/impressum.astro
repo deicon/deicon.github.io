@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<BaseLayout title="Impressum — deicon it solutions" description="Impressum der deicon it solutions GmbH & Co. KG" lang="de" canonicalPath="impressum/">
+  <Nav lang="de" />
+  <main id="main-content" class="mx-auto max-w-3xl px-6 py-16 lg:px-12">
+    <h1 class="text-3xl font-extrabold tracking-tight text-text-primary">Impressum</h1>
+    <div class="mt-8 space-y-6 text-sm leading-relaxed text-text-secondary [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-text-primary [&_h2]:mt-8 [&_h2]:mb-2">
+      <p>
+        <strong class="text-text-primary">deicon it solutions GmbH & Co. KG</strong><br />
+        Teutonenweg 4<br />
+        65232 Taunusstein
+      </p>
+      <h2>Kontakt</h2>
+      <p>Telefon: 06128 / 9 790 710<br />E-Mail: info@deicon.de</p>
+      <h2>Vertretungsberechtigter Gesellschafter</h2>
+      <p>deicon it solutions Verwaltungs-GmbH, vertreten durch Geschäftsführer Dieter Eickstädt</p>
+      <h2>Registereintrag</h2>
+      <p>Eingetragen im Handelsregister.<br />Registergericht: Amtsgericht Wiesbaden</p>
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: DE [Nummer ergänzen]</p>
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>Dieter Eickstädt, Teutonenweg 4, 65232 Taunusstein</p>
+    </div>
+  </main>
+  <Footer lang="de" />
+</BaseLayout>

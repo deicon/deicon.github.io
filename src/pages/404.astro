@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<BaseLayout title="404 — deicon it solutions" description="Seite nicht gefunden" lang="de">
+  <Nav lang="de" />
+  <main id="main-content" class="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
+    <h1 class="text-6xl font-extrabold text-accent">404</h1>
+    <p class="mt-4 text-lg text-text-secondary">Seite nicht gefunden</p>
+    <p class="mt-2 text-sm text-text-secondary">Die angeforderte Seite existiert nicht.</p>
+    <a href="/" class="mt-8 rounded-md bg-accent px-6 py-3 text-sm font-bold text-primary transition-colors hover:bg-accent/90">
+      Zurück zur Startseite
+    </a>
+  </main>
+  <Footer lang="de" />
+</BaseLayout>
