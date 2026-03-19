@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Hero from '@/components/Hero.astro';
+import SectionDivider from '@/components/SectionDivider.astro';
+import Kompetenzen from '@/components/Kompetenzen.astro';
+import Insights from '@/components/Insights.astro';
+import Kontakt from '@/components/Kontakt.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<BaseLayout
+  title="deicon it solutions — IT Strategy, Due Diligence, Cloud Native, AI"
+  description="deicon it solutions: IT Strategy, IT Due Diligence, Cloud Native Architectures and AI Transformation for technical decision makers."
+  lang="en"
+>
+  <Nav lang="en" />
+  <main id="main-content">
+    <Hero lang="en" />
+    <SectionDivider />
+    <Kompetenzen lang="en" />
+    <SectionDivider />
+    <Insights lang="en" />
+    <SectionDivider />
+    <Kontakt lang="en" />
+  </main>
+  <Footer lang="en" />
+</BaseLayout>
