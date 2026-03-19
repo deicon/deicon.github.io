@@ -1,13 +1,18 @@
-# project
-_site
-.sass-cache
-.vagrant
-.idea
+# Astro
+node_modules/
+dist/
+.astro/
 
-# worktrees
+# Worktrees
 .worktrees/
+
+# Superpowers
+.superpowers/
+
+# Environment
+.env
+.env.*
 
 # general
 .DS_Store
 Thumbs.db
-ehthumbs.db
