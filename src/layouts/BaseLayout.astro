@@ -1,0 +1,75 @@
+---
+import SkipToContent from '@/components/SkipToContent.astro';
+import '@/styles/global.css';
+import { type Lang } from '@/i18n/translations';
+import { getLocalePath, getAlternateLang } from '@/i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  canonicalPath?: string;
+}
+
+const { title, description, lang, canonicalPath = '' } = Astro.props;
+const altLang = getAlternateLang(lang);
+const siteUrl = 'https://www.deicon.de';
+const canonicalUrl = `${siteUrl}${getLocalePath(lang, canonicalPath)}`;
+const alternateUrl = `${siteUrl}${getLocalePath(altLang, canonicalPath)}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="de" href={`${siteUrl}${getLocalePath('de', canonicalPath)}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${getLocalePath('en', canonicalPath)}`} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'deicon it solutions GmbH & Co. KG',
+      url: siteUrl,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Teutonenweg 4',
+        addressLocality: 'Taunusstein',
+        postalCode: '65232',
+        addressCountry: 'DE',
+      },
+      telephone: '+49612897907 10',
+      email: 'info@deicon.de',
+    })} />
+  </head>
+  <body class="bg-darker font-sans text-text-secondary">
+    <SkipToContent lang={lang} />
+    <slot />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
