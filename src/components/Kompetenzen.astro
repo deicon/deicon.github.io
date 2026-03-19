@@ -1,0 +1,41 @@
+---
+import KompetenzItem from './KompetenzItem.astro';
+import { type Lang } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/utils';
+
+import strategyImg from '@/assets/images/strategy.jpg';
+import dueDiligenceImg from '@/assets/images/due-diligence.jpg';
+import cloudNativeImg from '@/assets/images/cloud-native.jpg';
+import aiImg from '@/assets/images/ai-transformation.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = [
+  { num: '01', key: '01' as const, image: strategyImg, alt: 'IT Strategy consulting' },
+  { num: '02', key: '02' as const, image: dueDiligenceImg, alt: 'IT Due Diligence assessment' },
+  { num: '03', key: '03' as const, image: cloudNativeImg, alt: 'Cloud Native architecture' },
+  { num: '04', key: '04' as const, image: aiImg, alt: 'AI Transformation' },
+];
+---
+
+<section id="kompetenzen" class="bg-darker px-6 py-20 lg:px-12" aria-labelledby="kompetenzen-title">
+  <h2 id="kompetenzen-title" class="mb-12 text-xs font-semibold uppercase tracking-[3px] text-accent">
+    {t('section.kompetenzen')}
+  </h2>
+  {items.map((item, i) => (
+    <KompetenzItem
+      number={item.num}
+      title={t(`kompetenz.${item.key}.title`)}
+      description={t(`kompetenz.${item.key}.description`)}
+      keywords={t(`kompetenz.${item.key}.keywords`).split(',')}
+      image={item.image}
+      imageAlt={item.alt}
+      reverse={i % 2 === 1}
+    />
+  ))}
+</section>

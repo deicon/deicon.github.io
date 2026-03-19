@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  number: string;
+  title: string;
+  description: string;
+  keywords: string[];
+  image: ImageMetadata;
+  imageAlt: string;
+  reverse?: boolean;
+}
+
+const { number, title, description, keywords, image, imageAlt, reverse = false } = Astro.props;
+---
+
+<div class={`reveal mx-auto mb-12 max-w-[1060px] overflow-hidden rounded-xl border border-border last:mb-0 ${reverse ? 'kompetenz-reverse' : ''}`}>
+  <div class={`grid grid-cols-1 lg:grid-cols-2 ${reverse ? 'lg:[direction:rtl]' : ''}`}>
+    <div class={`flex flex-col justify-center bg-surface p-8 lg:p-12 ${reverse ? 'lg:[direction:ltr]' : ''}`}>
+      <div class="text-5xl font-extrabold leading-none tracking-tight text-accent/15">{number}</div>
+      <h3 class="mt-2 text-2xl font-extrabold tracking-tight text-text-primary lg:text-[28px]">{title}</h3>
+      <p class="mt-4 text-[15px] leading-relaxed text-text-secondary">{description}</p>
+      <div class="mt-5 h-0.5 w-8 bg-accent"></div>
+      <div class="mt-4 flex flex-wrap gap-1.5">
+        {keywords.map((kw) => (
+          <span class="rounded border border-accent-border bg-accent/8 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-accent">
+            {kw}
+          </span>
+        ))}
+      </div>
+    </div>
+    <div class={`relative min-h-[240px] overflow-hidden lg:min-h-[320px] ${reverse ? 'lg:[direction:ltr]' : ''}`}>
+      <Image
+        src={image}
+        alt={imageAlt}
+        width={800}
+        loading="lazy"
+        class="h-full w-full object-cover brightness-[0.55] saturate-[0.8] transition-all duration-400 hover:brightness-[0.65] hover:saturate-[0.9] hover:scale-[1.03]"
+      />
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-darker/70 to-darker/20"></div>
+    </div>
+  </div>
+</div>
