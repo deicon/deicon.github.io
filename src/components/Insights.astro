@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BlogCard from './BlogCard.astro';
+import { type Lang } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const allPosts = await getCollection('blog', (post) => post.data.lang === lang);
+const posts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+
+{posts.length > 0 && (
+  <section id="insights" class="bg-primary px-6 py-20 lg:px-12" aria-labelledby="insights-title">
+    <h2 id="insights-title" class="mb-12 text-xs font-semibold uppercase tracking-[3px] text-accent">
+      {t('section.insights')}
+    </h2>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => {
+        const slug = post.id.startsWith(`${lang}/`) ? post.id.slice(lang.length + 1) : post.id;
+        return (
+          <BlogCard
+            title={post.data.title}
+            date={post.data.date}
+            excerpt={post.data.excerpt}
+            slug={slug}
+            lang={lang}
+          />
+        );
+      })}
+    </div>
+  </section>
+)}
