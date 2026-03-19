@@ -51,7 +51,7 @@ const datenschutzUrl = lang === 'de' ? '/datenschutz/' : '/datenschutz/';
     formData.delete('consent');
 
     try {
-      const res = await fetch('https://formspree.io/f/info@deicon.de', {
+      const res = await fetch('https://formspree.io/info@deicon.de', {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' },
