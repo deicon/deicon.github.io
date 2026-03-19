@@ -4,6 +4,9 @@ _site
 .vagrant
 .idea
 
+# worktrees
+.worktrees/
+
 # general
 .DS_Store
 Thumbs.db
