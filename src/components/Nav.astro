@@ -1,0 +1,86 @@
+---
+// src/components/Nav.astro
+import { type Lang } from '@/i18n/translations';
+import { useTranslations, getLocalePath, getAlternateLang } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const altLang = getAlternateLang(lang);
+const langPrefix = lang === 'de' ? '' : '/en';
+---
+
+<nav class="sticky top-0 z-50 flex items-center justify-between bg-primary px-6 py-5 border-b border-border lg:px-12" aria-label="Main navigation">
+  <a href={getLocalePath(lang)} class="text-[22px] font-extrabold text-text-primary tracking-tight">
+    deicon<span class="text-accent">.</span>
+  </a>
+
+  {/* Desktop nav */}
+  <div class="hidden items-center gap-6 text-sm md:flex">
+    <a href={`${langPrefix}/#kompetenzen`} class="text-text-secondary hover:text-text-primary transition-colors">{t('nav.kompetenzen')}</a>
+    <a href={`${langPrefix}/#insights`} class="text-text-secondary hover:text-text-primary transition-colors">{t('nav.insights')}</a>
+    <a href={`${langPrefix}/#kontakt`} class="text-text-secondary hover:text-text-primary transition-colors">{t('nav.kontakt')}</a>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <a
+      href={getLocalePath(altLang)}
+      class="rounded border border-border px-3 py-1 text-xs text-text-secondary hover:text-text-primary transition-colors"
+    >
+      {lang === 'de' ? (<><span class="font-semibold text-text-primary">DE</span> / EN</>) : (<>DE / <span class="font-semibold text-text-primary">EN</span></>)}
+    </a>
+
+    {/* Hamburger button (mobile) */}
+    <button
+      id="menu-toggle"
+      class="md:hidden text-text-secondary hover:text-text-primary"
+      aria-label="Menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  {/* Mobile menu overlay */}
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-40 hidden flex-col items-center justify-center gap-8 bg-primary/95 backdrop-blur-sm text-lg md:hidden"
+  >
+    <button id="menu-close" class="absolute top-5 right-6 text-text-secondary hover:text-text-primary" aria-label="Close menu">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <a href={`${langPrefix}/#kompetenzen`} class="mobile-nav-link text-text-secondary hover:text-text-primary transition-colors">{t('nav.kompetenzen')}</a>
+    <a href={`${langPrefix}/#insights`} class="mobile-nav-link text-text-secondary hover:text-text-primary transition-colors">{t('nav.insights')}</a>
+    <a href={`${langPrefix}/#kontakt`} class="mobile-nav-link text-text-secondary hover:text-text-primary transition-colors">{t('nav.kontakt')}</a>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const close = document.getElementById('menu-close');
+  const links = menu?.querySelectorAll('.mobile-nav-link');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    menu?.classList.add('flex');
+    toggle?.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    menu?.classList.remove('flex');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  links?.forEach((link) => link.addEventListener('click', closeMenu));
+</script>
