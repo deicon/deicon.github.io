@@ -1,0 +1,21 @@
+---
+import { type Lang } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="flex flex-col items-center justify-between gap-2 border-t border-border/50 bg-darkest px-6 py-5 text-xs text-text-muted sm:flex-row lg:px-12">
+  <span>&copy; {year} deicon it solutions GmbH &amp; Co. KG</span>
+  <span>
+    <a href="/impressum/" class="hover:text-text-secondary transition-colors">{t('footer.impressum')}</a>
+    <span class="mx-1">&middot;</span>
+    <a href="/datenschutz/" class="hover:text-text-secondary transition-colors">{t('footer.datenschutz')}</a>
+  </span>
+</footer>
